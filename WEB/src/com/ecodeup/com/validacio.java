@@ -36,12 +36,12 @@ public class validacio extends HttpServlet {
 		String name= request.getParameter("name");
 		String compname = "(^[a-zA-Z0-9]{1,10})$";
 		String password = request.getParameter("password");
-		String comppassword="(^[a-zA-Z0-9]{8,})$";
+		String comptraseña="(^[a-zA-Z0-9]{8,})$";
 		
 		boolean sii=LoginCase.selectUser(name);
 		boolean si=LoginCase.insertUser(name,password,email);
 		
-		if(Pattern.matches(compemail, email) && Pattern.matches(compname,name) && Pattern.matches(comppassword,password) && si==true && sii==true) {
+		if(Pattern.matches(compemail, email) && Pattern.matches(compname,name) && Pattern.matches(comptraseña,password) && si==true && sii==true) {
 			getServletContext().getRequestDispatcher("/html/success.html").forward(request, response);
 		}else {
 			getServletContext().getRequestDispatcher("/html/fail.html").forward(request, response);
