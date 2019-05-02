@@ -12,7 +12,7 @@ public class ConnectionDB {
 		Connection conn=null;
 		try {
 			Class.forName(DRIVER);
-			conn=DriverManager.getConnection(URL,"SA","");
+			conn=DriverManager.getConnection(URL,"SA",password());
 			
 		}catch(ClassNotFoundException | SQLException e) {
 			System.err.println("Error: "+e);
@@ -21,5 +21,8 @@ public class ConnectionDB {
 	}
 	public ConnectionDB() {
 		super();
+	}
+	public static String password() {
+		return "";
 	}
 }
