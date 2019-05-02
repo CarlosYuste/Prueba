@@ -19,10 +19,10 @@ public class ConnectionDB {
 		}
 		return conn;
 	}
-	public ConnectionDB() {
+	private ConnectionDB() {
 		super();
 	}
-	public static String password() {
+	private static String password() {
 		return "";
 	}
 }
