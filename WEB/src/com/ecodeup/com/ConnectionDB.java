@@ -3,8 +3,10 @@ package com.ecodeup.com;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 public class ConnectionDB {
+	private static Logger logger = Logger.getLogger("Warning");
 
 	static String DRIVER="org.hsqldb.jdbcDriver";
 	static String URL="jdbc:hsqldb:file:C:\\Users\\Laptop-06\\eclipse-workspace\\WEB\\WebContent\\WEB-INF\\db\\srv_db";
@@ -15,7 +17,7 @@ public class ConnectionDB {
 			conn=DriverManager.getConnection(URL,"SA",password());
 			
 		}catch(ClassNotFoundException | SQLException e) {
-			System.err.println("Error: "+e);
+			logger.info("Error: "+e);
 		}
 		return conn;
 	}
