@@ -5,6 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class LoginCase {
+	
+	//Constructor Privat
+	private LoginCase(){
+		
+	}
 
 	//INSERT
 	public static boolean insertUser(String uName, String uPass, String uEmail) {
