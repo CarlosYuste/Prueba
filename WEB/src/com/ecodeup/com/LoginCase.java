@@ -4,14 +4,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Logger;
-
+/**
+ * 
+ * @author Laptop-06
+ *
+ */
 public class LoginCase {
 	private static Logger logger = Logger.getLogger("Warning");
 	//Constructor Privat
 	private LoginCase(){
 		
 	}
-
+/**
+ * 
+ * @param uName  Para saber el nombre que escriben en el input
+ * @param uPass  Para saber la contraseña que escriben en el input
+ * @param uEmail Para saber el Email que ponen en el input
+ * @return Devuleve true si la consulta y false si es incorrecta
+ */
 	//INSERT
 	public static boolean insertUser(String uName, String uPass, String uEmail) {
 		logger.info("1");

@@ -5,6 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
+/**
+ * 
+ * @author Laptop-06
+ *conexion a la base de datos
+ */
 public class ConnectionDB {
 	private static Logger logger = Logger.getLogger("Warning");
 

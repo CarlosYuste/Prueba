@@ -27,6 +27,9 @@ public class validacio extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    /**
+     * Comprovamos que los datos introducidos son los correctos y si es así accedemos a succes.html, sino a fail.html
+     */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//Poner aquí expresiones regulares porfavor dios te lo pido no falles esta vez te quiero mucho mamá.
@@ -41,8 +44,10 @@ public class validacio extends HttpServlet {
 		boolean sii=LoginCase.selectUser(name);
 		boolean si=LoginCase.insertUser(name,password,email);
 		
-		if(Pattern.matches(compemail, email) && Pattern.matches(compname,name) && Pattern.matches(comptraseña,password) && si==true && sii==true) {
-			getServletContext().getRequestDispatcher("/html/success.html").forward(request, response);
+		if(Pattern.matches(compemail, email) && Pattern.matches(compname,name) && Pattern.matches(comptraseña,password) && sii==false) {
+			if(si==true) {
+				getServletContext().getRequestDispatcher("/html/success.html").forward(request, response);
+			}
 		}else {
 			getServletContext().getRequestDispatcher("/html/fail.html").forward(request, response);
 		}
